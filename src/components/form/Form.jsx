@@ -1,7 +1,6 @@
 import React, { useEffect } from "react"
 import './Form.css';
 import { useTelegram } from "../hooks/useTelegram";
-import { Button } from "../Button/Button";
 
 const { tg } = useTelegram();
 
