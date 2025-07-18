@@ -17,5 +17,16 @@ const Header = () => {
         </div>
     );
 };
-
+function App() {
+    return (
+    <div className="App">
+      <Header/>
+       <Button onClick={onToggleButton}>закрыть</Button>
+       <Routes>
+        <Route index element={<ProductList />} />
+        <Route path={'form'} element={<Form />} />
+        </Routes>
+    </div>
+  );
+};
 export default Header;
