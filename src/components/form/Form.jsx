@@ -17,14 +17,14 @@ const Form = () => {
         tg.sendData(JSON.stringify(data));
         tg.close();
         
-    }, []);
+    }, [country, city, type, tg]);
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
         return () => {
             tg.offEvent('mainButtonClicked', onSendData);
         }
-            }, []);
+            }, [onSendData, tg]);
             
         
 
