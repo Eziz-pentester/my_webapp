@@ -10,11 +10,12 @@ const Form = () => {
     const [type, setType] = useState('physical');
     const onSendData = useCallback(() => {
         const data = {
-            country,
-            city,
-            type
+            country: country,
+            city: city,
+            type: type,
         };
         tg.sendData(JSON.stringify(data));
+        tg.close();
         
     }, []);
 
