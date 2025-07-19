@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import { useTelegram } from './components/hooks/useTelegram'; 
-import { Button } from './components/Button/Button';  
+import  Button  from './components/Button/Button';  
 import  Header  from './components/Header/Header';
 import { Route, Routes } from 'react-router-dom';
 import  ProductList  from './components/ProductList/ProductList';
 import  Form  from './components/form/Form';
-
+import './components/Header/Header.css' 
 function App() {
   const {onToggleButton, tg} = useTelegram();
   useEffect(() => {
@@ -16,10 +16,11 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Routes>
+       <Button onClick={onToggleButton}>закрыть</Button>
+       <Routes>
         <Route index element={<ProductList />} />
         <Route path={'form'} element={<Form />} />
-      </Routes>
+        </Routes>
     </div>
   );
 }
