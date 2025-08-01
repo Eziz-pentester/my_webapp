@@ -65,8 +65,5 @@ const Form = () => {
         </div>
     );
 };
-useEffect(() => {
-    tg.onEvent('mainButtonClicked', () => console.log('MainButton clicked'));
-}, [tg]);
 
 export default Form;
