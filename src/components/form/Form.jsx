@@ -32,6 +32,14 @@ const Form = () => {
     useEffect(() => {
         tg.MainButton.setParams({ text: "Отправить данные" });
     }, [tg]);
+    
+    useEffect(() => {
+    tg.onEvent('mainButtonClicked', () => {
+        console.log('Нажата кнопка!');
+        tg.sendData(JSON.stringify({ test: "hello from webapp" }));
+    });
+}, []);
+
 
     useEffect(() => {
         if (!country || !city) {
@@ -67,3 +75,4 @@ const Form = () => {
 };
 
 export default Form;
+  
