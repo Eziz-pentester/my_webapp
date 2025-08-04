@@ -10,15 +10,16 @@ const Form = () => {
     const [type, setType] = useState('physical');
     const onSendData = useCallback(() => {
         const data = {
-            country: country,
-            city: city,
-            type: type,
-        };
-        console.log('Отправка данных:', data);    
-        tg.sendData(JSON.stringify(data));
-        tg.close();
+             country,
+             city,
+             type
+        }
+         tg.sendData(JSON.stringify(data));
+    },[])     
+          
         
-    }, [country, city, type, tg]);
+        
+   
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -32,7 +33,7 @@ const Form = () => {
     useEffect(() => {
         tg.MainButton.setParams({ text: "Отправить данные" });
     }, [tg]);
-    
+
     useEffect(() => {
     tg.onEvent('mainButtonClicked', () => {
         console.log('Нажата кнопка!');
