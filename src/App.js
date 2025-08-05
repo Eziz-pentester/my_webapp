@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import  ProductList  from './components/ProductList/ProductList';
 import  Form  from './components/form/Form';
 import './components/Header/Header.css' 
+import ProductItem from './ProductItem/ProductItem';
 function App() {
   const {onToggleButton, tg} = useTelegram();
   useEffect(() => {
@@ -19,6 +20,7 @@ function App() {
        <Button onClick={onToggleButton}>закрыть</Button>
        <Routes>
         <Route index element={<ProductList />} />
+        <Route path={'product/:id'} element={<ProductItem />} />
         <Route path={'form'} element={<Form />} />
         </Routes>
     </div>
