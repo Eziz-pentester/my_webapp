@@ -32,7 +32,7 @@ const ProductList = () => {
         }else {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Добавлено ${newItems.length} товаров`
+                text: `Купить ${newItems.length} товаров на сумму ${getTotalPrice(newItems)}`
             });
         }
     }
@@ -40,7 +40,7 @@ const ProductList = () => {
         <div className={'list'}>
             {products.map(item =>(
                 <ProductItem
-                    product={item}
+                    product={item.title}
                     onAdd={onAdd}
                     className={'item'}
                 />
